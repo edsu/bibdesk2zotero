@@ -45,7 +45,7 @@ def convert(bib_file, base_dir):
     for key in db.entries:
         entry = db.entries[key]
         for field_name in entry.fields:
-            m = re.match('^Bdsk-File-(\d+)$', field_name)
+            m = re.match('^[Bb]dsk-[Ff]ile-(\d+)$', field_name)
             if m:
                 bdsk = entry.fields[field_name]
                 bdsk_decoded = base64.b64decode(bdsk)
